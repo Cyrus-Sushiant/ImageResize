@@ -40,7 +40,7 @@ namespace ImageResize
                 var finalWidth = (int)(sourceWidth * adjustRatio);
                 var finalHeight = (int)(sourceHeight * adjustRatio);
 
-                using (var newBmp = srcBitmap.Resize(new SKImageInfo(finalWidth, finalHeight), SKBitmapResizeMethod.Lanczos3))
+                using (var newBmp = srcBitmap.Resize(new SKImageInfo(finalWidth, finalHeight), SKFilterQuality.High))
                 {
                     if (finalWidth == width && finalHeight == height)
                     {

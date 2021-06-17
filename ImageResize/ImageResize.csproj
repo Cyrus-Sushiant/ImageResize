@@ -6,32 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\test %281%29.png" />
-    <None Remove="Images\test %282%29.jpg" />
-    <None Remove="Images\test %283%29.jpg" />
-    <None Remove="Images\test %284%29.jpg" />
-    <None Remove="Images\test %285%29.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Images\test (1).png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\test (2).jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\test (3).jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\test (4).jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\test (5).jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.80.2" />
   </ItemGroup>
 

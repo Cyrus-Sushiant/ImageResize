@@ -18,8 +18,8 @@ namespace ImageResize
                 {
                     try
                     {
-                        var resize = imageUtility.Resize(item.OpenRead(), 400, 400, 1);
-                        var savePath = Path.Combine(imagesPath, $"Resize-{item.Name}");
+                        var resize = imageUtility.Resize(item.OpenRead(), 500, 500, 1);
+                        var savePath = Path.Combine(imagesPath, $"Resize-{Path.GetFileNameWithoutExtension(item.FullName)}.png");
                         using (var fs = File.Open(savePath, FileMode.Create))
                             fs.Write(resize);
                     }
