@@ -12,7 +12,7 @@ namespace ImageResize.Tests
         {
             const string imagePath = @"E:\Projects\Test\ImageResize\ImageResize\ImageResize\Images\test (2).jpg";
             ImageUtility imageUtility = new ImageUtility(400, 400);
-            var resize = imageUtility.Resize(File.Open(imagePath, FileMode.Open), 400, 400, 1);
+            var resize = imageUtility.ResizeWithSkiaSharp(File.Open(imagePath, FileMode.Open), 400, 400, 1);
 
             Assert.IsNotNull(resize);
             Assert.IsTrue(resize.Length > 0);
@@ -31,7 +31,7 @@ namespace ImageResize.Tests
             ImageUtility imageUtility = new ImageUtility(400, 400);
             try
             {
-                var resize = imageUtility.Resize(File.Open(imagePath, FileMode.Open), 400, 400, 1);
+                var resize = imageUtility.ResizeWithSkiaSharp(File.Open(imagePath, FileMode.Open), 400, 400, 1);
             }
             catch (System.ArgumentOutOfRangeException ex)
             {
