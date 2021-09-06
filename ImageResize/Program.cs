@@ -8,8 +8,8 @@ namespace ImageResize
         const string imagesPath = @"E:\Projects\Test\ImageResize\ImageResize\ImageResize\Images";
         static void Main(string[] args)
         {
-            int width = 500;
-            int height = 500;
+            int width = 178;
+            int height = 178;
             double ratio = 1;
 
             DirectoryInfo di = new DirectoryInfo(imagesPath);
@@ -23,15 +23,17 @@ namespace ImageResize
                     try
                     {
                         var fname = Path.GetFileNameWithoutExtension(item.FullName);
-                        SaveImage(imageUtility.ResizeWithSkiaSharp(item.OpenRead(), width, height, ratio), $"Resize-SkiaSharp-{fname}.png");
+                        //SaveImage(imageUtility.ResizeWithSkiaSharp(item.OpenRead(), width, height, ratio), $"Resize-SkiaSharp-{fname}.png");
 
-                        SaveImage(imageUtility.ResizeWithSystemDrawing(item.OpenRead(), width, height, ratio), $"Resize-SystemDrawing-{fname}.png");
+                        //SaveImage(imageUtility.ResizeWithSystemDrawing(item.OpenRead(), width, height, ratio), $"Resize-SystemDrawing-{fname}.png");
 
-                        SaveImage(imageUtility.ResizeWithSystemDrawingThumbnailImage(item.OpenRead(), width, height, ratio), $"Resize-SystemDrawingThumbnailImage-{fname}.png");
+                        //SaveImage(imageUtility.ResizeWithSystemDrawingThumbnailImage(item.OpenRead(), width, height, ratio), $"Resize-SystemDrawingThumbnailImage-{fname}.png");
+                        
+                        SaveImage(imageUtility.ResizeAndBlurWithSystemDrawing(item.OpenRead(), width, height, ratio), $"Resize-SystemDrawing-Blur-{fname}.png");
 
-                        SaveImage(imageUtility.ResizeWithMagickImage(item.OpenRead(), width, height, ratio), $"Resize-MagickImage-{fname}.png");
+                        //SaveImage(imageUtility.ResizeWithMagickImage(item.OpenRead(), width, height, ratio), $"Resize-MagickImage-{fname}.png");
 
-                        SaveImage(imageUtility.ResizeWithMagicScaler(item.OpenRead(), width, height, ratio), $"Resize-MagickScaler-{fname}.png");
+                        //SaveImage(imageUtility.ResizeWithMagicScaler(item.OpenRead(), width, height, ratio), $"Resize-MagickScaler-{fname}.png");
                     }
                     catch (Exception ex)
                     {
